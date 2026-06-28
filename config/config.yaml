@@ -66,10 +66,20 @@ platforms:
   api_url: ""                            # 热榜数据 API 地址（留空使用默认地址）
                                         # 如果你自行部署了 newsnow，填入你的地址，如: https://your-domain.com/api/s
   sources:
+    - id: "baidu"
+      name: "百度热搜"
     - id: "thepaper"
       name: "澎湃新闻"
+    - id: "bilibili-hot-search"
+      name: "bilibili 热搜"
     - id: "ifeng"
       name: "凤凰网"
+    - id: "tieba"
+      name: "贴吧"
+    - id: "weibo"
+      name: "微博"
+    - id: "douyin"
+      name: "抖音"
     - id: "zhihu"
       name: "知乎"
 
@@ -103,16 +113,27 @@ rss:
     - id: "hacker-news"
       name: "Hacker News"
       url: "https://hnrss.org/frontpage"
-      enabled: false
 
     - id: "ruanyifeng"
       name: "阮一峰的网络日志"
       url: "http://www.ruanyifeng.com/blog/atom.xml"
 
-    - id: "yahoo-finance"
-      name: "雅虎财经"
-      url: "https://finance.yahoo.com/news/rssindex"
-      enabled: false
+    - id: "NeuroClastic"
+      name: "自闭真实经历分享"
+      url: "https://neuroclastic.com/feed/"
+
+    - id: "Thinking Person's Guide to Autism"
+      name: "分享自闭研究"
+      url: "https://thinkingautismguide.com/feed"
+
+    - id: "ADDitude Magazine"
+      name: "adhd权威杂志"
+      url: "https://www.additudemag.com/feed/"
+
+    - id: "The Highly Sensitive Person Blog"
+      name: "hsp的博客"
+      url: "https://hsperson.com/feed/"
+
 
 
 
@@ -223,7 +244,7 @@ display:
   # 独立展示区：将指定平台/RSS 完整展示，不受关键词过滤
   # 推送展示由 regions.standalone 控制，AI 分析由 ai_analysis.include_standalone 控制
   standalone:
-    platforms: ["wallstreetcn-hot","thepaper"] # 热榜平台 ID 列表（如 ["zhihu", "weibo"]）
+    platforms: ["zhihu", "wallstreetcn-hot"]     # 热榜平台 ID 列表（如 ["zhihu", "weibo"]）
     rss_feeds: []                                # RSS 源 ID 列表（如 ["hacker-news"]）
     max_items: 20                                # 每个源最多展示条数（0=不限制）
 
